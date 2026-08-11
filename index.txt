@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Repair & Supplies | Construction, Renovations & Waterproofing Specialists Cape Town</title>
+    
+    <!-- Google Fonts: Manrope (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Official Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration & Custom CSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#164B9B',
+                        navy: '#142B67',
+                        light: '#438FD9',
+                        accent: '#EA953D',
+                        basebg: '#F4F8FC',
+                        basetext: '#1F2937',
+                        whatsapp: '#25D366',
+                        facebook: '#1877F2'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations & Interactions */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Moving Banner / Marquee */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-content span {
+            padding: 0 2rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* True Masonry Layout for Mobile & Desktop */
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 10px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 3;
+                column-gap: 16px;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #e2e8f0;
+            position: relative;
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .masonry-item {
+                margin-bottom: 16px;
+                border-radius: 10px;
+            }
+        }
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        .masonry-item:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Premium Form Input Styling */
+        .input-premium {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .input-premium:focus {
+            border-color: #164B9B;
+            box-shadow: 0 0 0 4px rgba(22, 75, 155, 0.1);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-basetext bg-basebg antialiased overflow-x-hidden">
+
+    <!-- Header / Navigation (Clean White Minimalist) -->
+    <header class="bg-white text-navy fixed w-full top-0 z-50 border-b border-gray-200/80 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-28 relative">
+                
+                <!-- Mobile Menu Button (Left aligned on mobile) -->
+                <div class="flex items-center md:hidden z-20">
+                    <button id="mobile-menu-btn" class="text-navy hover:text-primary focus:outline-none p-1.5" aria-label="Toggle Menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Desktop Left Nav -->
+                <nav class="hidden md:flex space-x-8 z-10 w-1/3">
+                    <a href="#about" class="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#services" class="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">Services</a>
+                </nav>
+
+                <!-- Central Logo (Seamless & Minimal) -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full flex items-center justify-center py-2 z-20">
+                    <a href="#" class="block">
+                        <img src="https://i.imgur.com/ZIxqGZs.jpeg" alt="Care Repair & Supplies Logo" class="h-14 md:h-20 w-auto object-contain mix-blend-multiply" />
+                    </a>
+                </div>
+
+                <!-- Desktop Right Nav -->
+                <nav class="hidden md:flex space-x-6 items-center justify-end z-10 w-1/3">
+                    <a href="#gallery" class="text-sm font-semibold text-gray-700 hover:text-primary transition-colors">Gallery</a>
+                    <a href="#contact" class="text-sm font-bold bg-primary text-white px-5 py-2.5 rounded hover:bg-navy transition-colors duration-200 shadow-sm">Get a Quote</a>
+                </nav>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full">
+            <div class="px-4 pt-3 pb-6 space-y-2 text-center">
+                <a href="#about" class="block px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-basebg hover:text-primary rounded transition">About</a>
+                <a href="#services" class="block px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-basebg hover:text-primary rounded transition">Services</a>
+                <a href="#gallery" class="block px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-basebg hover:text-primary rounded transition">Gallery</a>
+                <a href="#contact" class="block px-3 py-2.5 mt-2 text-sm font-bold text-white bg-primary hover:bg-navy rounded transition shadow-sm">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Rooftop Background Image with Navy Dark Overlay) -->
+    <section class="relative pt-36 pb-24 md:pt-44 md:pb-32 lg:pt-48 lg:pb-36 bg-navy overflow-hidden flex items-center min-h-[600px] md:min-h-[680px]">
+        <!-- High-End Construction/Rooftop Background Image -->
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop');"></div>
+        
+        <!-- Subtle Dark Navy Gradient Overlay for Text Readability -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/70"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl text-left reveal active">
+                
+                <!-- Category Sub-tag -->
+                <p class="text-xs md:text-sm font-heading font-extrabold tracking-widest text-accent uppercase mb-6 md:mb-8">
+                    PROPERTY SOLUTIONS • CAPE TOWN
+                </p>
+                
+                <!-- Headline -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight leading-none text-white mb-6 md:mb-8">
+                    Build. Renovate. Protect.
+                </h1>
+                
+                <!-- Body Copy -->
+                <p class="text-sm sm:text-base md:text-lg text-gray-200 font-normal leading-relaxed mb-6 md:mb-8 max-w-xl">
+                    Professional construction, renovation and waterproofing solutions for homes and businesses across Cape Town. From protecting your property against leaks and water damage to transforming your space through quality renovations and construction, we deliver practical solutions built to last.
+                </p>
+
+                <!-- Subtle Service Line -->
+                <p class="text-[11px] sm:text-xs font-heading font-bold tracking-widest text-blue-200 uppercase mb-8 md:mb-10">
+                    WATERPROOFING  •  RENOVATIONS  •  CONSTRUCTION
+                </p>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-5 sm:space-y-0 sm:space-x-4 mb-12 md:mb-14">
+                    <a href="#contact" class="px-6 py-3.5 bg-accent text-white font-heading font-bold text-sm rounded hover:bg-[#d68532] transition-colors duration-200 flex items-center justify-center text-center shadow-md">
+                        Get a Free Quote <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                    <a href="https://wa.me/27716880168" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-whatsapp text-white font-heading font-bold text-sm rounded hover:bg-green-600 transition-colors duration-200 flex items-center justify-center text-center shadow-md">
+                        <i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp Us
+                    </a>
+                </div>
+
+                <!-- Minimal Trust Rating -->
+                <div class="flex items-center space-x-2 text-white/90 text-xs md:text-sm font-medium">
+                    <span class="text-accent tracking-widest">★★★★★</span>
+                    <span class="text-gray-200">100% Client Satisfaction</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Moving Catchphrase Banner (Marquee) -->
+    <div class="bg-navy text-blue-200 py-3 marquee-container border-b border-navy/90">
+        <div class="marquee-content uppercase font-heading text-xs md:text-sm tracking-widest">
+            <span>Quality Building Extensions</span>
+            <span class="text-accent">•</span>
+            <span>Home & Kitchen Renovations</span>
+            <span class="text-accent">•</span>
+            <span>Expert Roof Leak Repairs</span>
+            <span class="text-accent">•</span>
+            <span>Precision Torch-On Application</span>
+            <span class="text-accent">•</span>
+            <span>Painting, Tiling & Ceilings</span>
+            <span class="text-accent">•</span>
+            <span>Trusted Cape Town Contractors</span>
+            <span class="text-accent">•</span>
+            <span>Long-Lasting Watertight Solutions</span>
+            <span class="text-accent">•</span>
+            <!-- Duplicate for infinite loop -->
+            <span>Quality Building Extensions</span>
+            <span class="text-accent">•</span>
+            <span>Home & Kitchen Renovations</span>
+            <span class="text-accent">•</span>
+            <span>Expert Roof Leak Repairs</span>
+            <span class="text-accent">•</span>
+            <span>Precision Torch-On Application</span>
+            <span class="text-accent">•</span>
+            <span>Painting, Tiling & Ceilings</span>
+            <span class="text-accent">•</span>
+            <span>Trusted Cape Town Contractors</span>
+            <span class="text-accent">•</span>
+            <span>Long-Lasting Watertight Solutions</span>
+            <span class="text-accent">•</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-basebg relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="h-px w-8 bg-accent"></div>
+                <h2 class="text-xs font-heading font-bold text-accent uppercase tracking-widest">About Us</h2>
+                <div class="h-px w-8 bg-accent"></div>
+            </div>
+            <h3 class="text-2xl md:text-4xl font-heading font-extrabold text-navy leading-tight mb-6 md:mb-8 tracking-tight">
+                Durability Meets Professional Workmanship
+            </h3>
+            <div class="space-y-4 md:space-y-6 text-gray-600 text-sm md:text-base leading-relaxed max-w-3xl mx-auto text-left sm:text-center">
+                <p>
+                    At <strong class="text-navy font-semibold">Care Repair & Supplies</strong>, we build, renovate, and protect your property. From new construction and comprehensive home renovations to long-lasting waterproofing systems, we deliver complete solutions that stand the test of time.
+                </p>
+                <p>
+                    Whether you are planning a renovation, expanding your building, or experiencing roof leaks and damp walls, <span class="text-primary font-medium">don't wait until issues worsen.</span> Our team completes every project using high-quality materials and skilled workmanship for a lasting, professional finish.
+                </p>
+            </div>
+            
+            <div class="mt-8 md:mt-10 inline-flex items-center p-5 md:p-6 bg-white rounded-2xl shadow-sm border border-gray-100 text-left">
+                <div class="w-12 h-12 bg-light/10 text-primary rounded-full flex items-center justify-center shrink-0 mr-4">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div>
+                    <p class="font-heading font-bold text-navy text-sm md:text-base">Expert Advice & Free Quotations</p>
+                    <p class="text-xs text-gray-500 mt-0.5">Luan Franken &mdash; Cape Town, Western Cape</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 reveal">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="h-px w-8 bg-accent"></div>
+                    <h2 class="text-xs font-heading font-bold text-accent uppercase tracking-widest">Our Expertise</h2>
+                    <div class="h-px w-8 bg-accent"></div>
+                </div>
+                <h3 class="text-2xl md:text-4xl font-heading font-bold text-navy mb-4 tracking-tight">Comprehensive Services</h3>
+                <p class="text-gray-500 text-sm md:text-base">Specialized solutions for all your construction, renovation, and waterproofing needs.</p>
+            </div>
+
+            <!-- Two Equal Columns Side-by-Side (Stacked on Mobile) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                
+                <!-- Column 1: WATERPROOFING -->
+                <div class="reveal bg-basebg rounded-2xl p-8 md:p-10 border border-gray-200/80 shadow-sm flex flex-col justify-between hover:border-light/40 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center space-x-4 mb-3">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                                <i class="fa-solid fa-droplet-slash text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-extrabold text-2xl md:text-3xl text-navy tracking-tight">WATERPROOFING</h4>
+                                <span class="text-xs font-heading font-bold text-accent tracking-widest uppercase block mt-0.5">SERVICES</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-gray-200 my-6"></div>
+
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Roof Waterproofing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Torch-On Waterproofing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Roof Leak Repairs
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Damp Proofing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Balcony Waterproofing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Concrete Waterproofing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Wall Waterproofing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Waterproofing Maintenance
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Roof Sealing
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-primary mr-3 shrink-0"></span>
+                                Waterproofing Inspections
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-200/60">
+                        <a href="#contact" class="inline-flex items-center text-xs font-heading font-bold text-primary hover:text-navy uppercase tracking-wider transition-colors">
+                            Request Waterproofing Quote <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: RENOVATIONS & CONSTRUCTION -->
+                <div class="reveal bg-basebg rounded-2xl p-8 md:p-10 border border-gray-200/80 shadow-sm flex flex-col justify-between hover:border-light/40 transition-all duration-300" style="transition-delay: 150ms;">
+                    <div>
+                        <div class="flex items-center space-x-4 mb-3">
+                            <div class="w-12 h-12 bg-navy/10 rounded-xl flex items-center justify-center text-navy shrink-0">
+                                <i class="fa-solid fa-hammer text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-extrabold text-2xl md:text-3xl text-navy tracking-tight">RENOVATIONS & CONSTRUCTION</h4>
+                                <span class="text-xs font-heading font-bold text-accent tracking-widest uppercase block mt-0.5">SERVICES</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-gray-200 my-6"></div>
+
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Home Renovations
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Bathroom Renovations
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Kitchen Renovations
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Building Extensions
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                New Building Construction
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Painting & Decorating
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Tiling
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Flooring
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Ceiling Installation
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                General Building & Repairs
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Property Improvements
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm md:text-base font-medium">
+                                <span class="w-2 h-2 rounded-full bg-navy mr-3 shrink-0"></span>
+                                Maintenance & Repairs
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-200/60">
+                        <a href="#contact" class="inline-flex items-center text-xs font-heading font-bold text-navy hover:text-primary uppercase tracking-wider transition-colors">
+                            Request Renovation Quote <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 md:py-24 bg-basebg relative border-t border-gray-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16 reveal">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="h-px w-8 bg-accent"></div>
+                    <h2 class="text-xs font-heading font-bold text-accent uppercase tracking-widest">WHY CHOOSE US</h2>
+                    <div class="h-px w-8 bg-accent"></div>
+                </div>
+                <h3 class="text-2xl md:text-4xl font-heading font-extrabold text-navy mb-4 tracking-tight">Built on Quality. Driven by Results.</h3>
+                <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                    From protecting your property against water damage to transforming your space through renovation and construction, we deliver professional workmanship with a focus on quality, reliability and lasting results.
+                </p>
+            </div>
+
+            <!-- 4 Clean Feature Blocks (1 Row Desktop, 2 Columns Mobile) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 reveal">
+                
+                <!-- Feature 01 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200/80 shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-award text-lg"></i>
+                            </div>
+                            <span class="font-heading font-extrabold text-xl text-primary/30">01</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-base md:text-lg text-navy mb-2.5">Quality Workmanship</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed">We take pride in delivering work completed to a high professional standard.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 02 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200/80 shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-handshake-angle text-lg"></i>
+                            </div>
+                            <span class="font-heading font-extrabold text-xl text-primary/30">02</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-base md:text-lg text-navy mb-2.5">Reliable & Professional</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed">Clear communication, dependable service and attention to detail from start to finish.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 03 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200/80 shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <span class="font-heading font-extrabold text-xl text-primary/30">03</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-base md:text-lg text-navy mb-2.5">Built to Last</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed">We focus on practical solutions and quality materials designed for long-term results.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 04 -->
+                <div class="bg-white p-6 md:p-8 rounded-xl border border-gray-200/80 shadow-sm hover:border-primary/30 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                                <i class="fa-solid fa-layer-group text-lg"></i>
+                            </div>
+                            <span class="font-heading font-extrabold text-xl text-primary/30">04</span>
+                        </div>
+                        <h4 class="font-heading font-bold text-base md:text-lg text-navy mb-2.5">One Team, Multiple Solutions</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed">From waterproofing to renovations and construction, we can handle a wide range of property improvement needs.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section id="gallery" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 reveal">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <div class="h-px w-8 bg-accent"></div>
+                    <h2 class="text-xs font-heading font-bold text-accent uppercase tracking-widest">Our Workmanship</h2>
+                    <div class="h-px w-8 bg-accent"></div>
+                </div>
+                <h3 class="text-2xl md:text-4xl font-heading font-bold text-navy mb-4 tracking-tight">Recent Projects</h3>
+                <p class="text-gray-500 text-sm md:text-base">A showcase of our high-quality construction, renovation, and waterproofing applications.</p>
+            </div>
+
+            <!-- True 2-Column Mobile Masonry Grid (9 New Images) -->
+            <div class="masonry-grid reveal" style="transition-delay: 200ms;">
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/HVJHPC8.jpeg" alt="Project 1" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/2uFEYUW.jpeg" alt="Project 2" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/G2Za5q3.jpeg" alt="Project 3" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/8400B4F.jpeg" alt="Project 4" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/sGvDUw9.jpeg" alt="Project 5" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/BqjopCw.jpeg" alt="Project 6" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/oXnZNAb.jpeg" alt="Project 7" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/tabDDem.jpeg" alt="Project 8" loading="lazy">
+                </div>
+                <div class="masonry-item shadow-sm hover:shadow-lg transition-all duration-300 group">
+                    <img src="https://i.imgur.com/dun7eFb.jpeg" alt="Project 9" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Contact Information (Dark Premium Sidebar) -->
+                <div class="lg:w-2/5 bg-gradient-to-b from-navy to-[#0a183d] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden reveal">
+                    <!-- Decorative background element -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-light/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/4 pointer-events-none"></div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-heading font-bold mb-3 text-white tracking-tight">Get In Touch</h3>
+                        <p class="text-blue-200 text-sm md:text-base font-light mb-10 leading-relaxed">Secure your service today. Whether planning a renovation or resolving leaks, contact us for free quotations and expert advice.</p>
+                        
+                        <div class="space-y-6 md:space-y-8">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/10 backdrop-blur border border-white/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-phone text-white text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-xs text-blue-300 uppercase tracking-wider font-semibold mb-1">Call / WhatsApp</p>
+                                    <p class="text-lg font-heading font-medium">071 688 0168</p>
+                                    <p class="text-xs text-blue-400 mt-1">Luan Franken</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/10 backdrop-blur border border-white/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-envelope text-white text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-xs text-blue-300 uppercase tracking-wider font-semibold mb-1">Email Us</p>
+                                    <p class="text-base font-heading font-medium break-all">care.repair.supplies@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/10 backdrop-blur border border-white/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-clock text-white text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-xs text-blue-300 uppercase tracking-wider font-semibold mb-1">Working Hours</p>
+                                    <p class="text-sm font-heading font-medium text-blue-100">Get in contact to secure service.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 mt-10 pt-8 border-t border-white/10">
+                        <a href="https://www.facebook.com/share/19JELZpAHa/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-[#1877F2]/20 border border-[#1877F2]/50 text-white text-sm font-medium rounded-full hover:bg-[#1877F2] transition-colors duration-300">
+                            <i class="fa-brands fa-facebook text-lg mr-2"></i> Follow Our Facebook
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:w-3/5 p-8 md:p-12 reveal" style="transition-delay: 100ms;">
+                    <h3 class="text-xl md:text-2xl font-heading font-bold text-navy mb-2 tracking-tight">Request a Free Quotation</h3>
+                    <p class="text-gray-500 text-sm mb-8">Fill out the form below and we will get back to you promptly.</p>
+                    
+                    <form id="quoteForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="fullName" class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Full Name</label>
+                                <input type="text" id="fullName" required class="input-premium w-full px-4 py-3 text-sm rounded-xl" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Phone Number</label>
+                                <input type="tel" id="phone" required class="input-premium w-full px-4 py-3 text-sm rounded-xl" placeholder="071 123 4567">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="serviceType" class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Service Required</label>
+                            <select id="serviceType" class="input-premium w-full px-4 py-3 text-sm rounded-xl text-gray-700">
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Waterproofing">Waterproofing Services</option>
+                                <option value="Renovations & Construction">Renovations & Construction</option>
+                                <option value="Roof Repairs & Waterproofing">Roof Repairs & Waterproofing</option>
+                                <option value="Home/Building Extensions">Home & Building Extensions</option>
+                                <option value="Painting, Tiling & Ceilings">Painting, Tiling & Ceilings</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Message Details</label>
+                            <textarea id="message" rows="4" required class="input-premium w-full px-4 py-3 text-sm rounded-xl resize-none" placeholder="Please describe your renovation, construction or waterproofing requirement..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary hover:bg-navy text-white font-heading font-bold py-3.5 px-8 rounded shadow-md hover:shadow-lg transition-all duration-300 flex justify-center items-center group text-sm">
+                            Send Request <i class="fa-solid fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Multi-Column Footer -->
+    <footer class="bg-[#0a183d] pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+                
+                <!-- Column 1: Brand & Logo -->
+                <div class="lg:col-span-1">
+                    <!-- Clean white pill for logo to pop on dark background -->
+                    <div class="bg-white p-3 rounded-xl inline-block mb-6 shadow-md">
+                        <img src="https://i.imgur.com/ZIxqGZs.jpeg" alt="Care Repair & Supplies" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-blue-200 text-sm leading-relaxed mb-6">
+                        Professional construction, renovations, waterproofing solutions, and property maintenance across Cape Town and the Western Cape.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="https://www.facebook.com/share/19JELZpAHa/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-facebook transition-colors">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="https://wa.me/27716880168" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-whatsapp transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-heading font-semibold mb-5 tracking-wide text-sm uppercase">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-blue-200 hover:text-white text-sm transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white text-sm transition-colors">Our Services</a></li>
+                        <li><a href="#gallery" class="text-blue-200 hover:text-white text-sm transition-colors">Project Gallery</a></li>
+                        <li><a href="#contact" class="text-blue-200 hover:text-white text-sm transition-colors">Contact & Quotes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div>
+                    <h4 class="text-white font-heading font-semibold mb-5 tracking-wide text-sm uppercase">Services</h4>
+                    <ul class="space-y-3">
+                        <li class="text-blue-200 text-sm">Waterproofing & Roof Sealing</li>
+                        <li class="text-blue-200 text-sm">Torch-On & Damp Proofing</li>
+                        <li class="text-blue-200 text-sm">Home & Building Extensions</li>
+                        <li class="text-blue-200 text-sm">Kitchen & Bathroom Renovations</li>
+                        <li class="text-blue-200 text-sm">Painting, Tiling & Repairs</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-white font-heading font-semibold mb-5 tracking-wide text-sm uppercase">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-phone text-accent mt-1 mr-3 text-sm"></i>
+                            <div>
+                                <p class="text-blue-200 text-sm font-medium">071 688 0168</p>
+                                <p class="text-blue-400 text-xs mt-0.5">Luan Franken</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-envelope text-accent mt-1 mr-3 text-sm"></i>
+                            <a href="mailto:care.repair.supplies@gmail.com" class="text-blue-200 hover:text-white text-sm transition-colors break-all">care.repair.supplies@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-accent mt-1 mr-3 text-sm"></i>
+                            <p class="text-blue-200 text-sm">Cape Town, <br>Western Cape, SA</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-blue-400">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Care Repair & Supplies. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">100% Client Satisfaction</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Shadow effect logic
+            if (currentScrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+
+            // Hide header on scroll down, show on scroll up
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                header.classList.add('-translate-y-full');
+            } else {
+                header.classList.remove('-translate-y-full');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Animation (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('serviceType').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = encodeURIComponent(`New Website Enquiry: ${service} from ${name}`);
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Phone: ${phone}\n` +
+                `Service Requested: ${service}\n\n` +
+                `Message Details:\n${message}\n\n` +
+                `---\nGenerated from Care Repair & Supplies Website`
+            );
+            
+            const mailtoLink = `mailto:care.repair.supplies@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Opening Mail Client... <i class="fa-solid fa-check ml-2"></i>';
+            submitBtn.classList.remove('bg-primary');
+            submitBtn.classList.add('bg-whatsapp');
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('bg-whatsapp');
+                submitBtn.classList.add('bg-primary');
+                event.target.reset();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+
